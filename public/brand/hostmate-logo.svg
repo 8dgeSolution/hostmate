@@ -1,0 +1,16 @@
+<svg width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hostmateTitle hostmateDesc">
+  <title id="hostmateTitle">HostMate</title>
+  <desc id="hostmateDesc">HostMate wordmark with a simple house icon; transparent background.</desc>
+
+  <!-- high-contrast location pin mark + wordmark -->
+  <g transform="translate(8 6)">
+    <!-- pin outer -->
+    <path d="M14 0 C21.732 0 28 6.268 28 14 C28 24 14 36 14 36 C14 36 0 24 0 14 C0 6.268 6.268 0 14 0 Z" fill="#0B6B5E" />
+    <!-- pin inner circle -->
+    <circle cx="14" cy="14" r="6" fill="#ffffff" />
+  </g>
+
+  <g transform="translate(56 20)">
+    <text x="0" y="36" fill="#0B1220" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="36" font-weight="700" letter-spacing="0.6">HOSTMATE</text>
+  </g>
+</svg>

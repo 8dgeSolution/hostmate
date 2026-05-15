@@ -1,0 +1,44 @@
+{
+	"folders": [
+		{
+			"path": "../AOM-HCONNECT"
+		},
+		{
+			"path": "../AOM-AI-NEW"
+		},
+		{
+			"path": "../AOM-AI"
+		},
+		{
+			"path": "../AOM-HDN-UI"
+		},
+		{
+			"path": "../AOM-HDN-SCHEMAS"
+		},
+		{
+			"path": "../AOM-HDN-AUTH"
+		},
+		{
+			"path": "../AOM-HDN-DB-API"
+		},
+		{
+			"path": "../AOM-Utility"
+		},
+		{
+			"path": "../AOM-HDN-UI-API"
+		},
+		{
+			"path": "../AOM-CHAT-UI"
+		},
+		{
+			"path": "../AOM-HDN-UI-API-V2"
+		},
+		{
+			"path": "../AOM-HDN-INFRA"
+		},
+		{
+			"path": "../NGHDN"
+		}
+	],
+	"settings": {}
+}

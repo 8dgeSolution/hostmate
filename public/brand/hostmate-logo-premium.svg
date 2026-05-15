@@ -1,0 +1,20 @@
+<svg width="650" height="160" viewBox="0 0 650 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hostmatePremiumTitle hostmatePremiumDesc">
+  <title id="hostmatePremiumTitle">HostMate premium logo</title>
+  <desc id="hostmatePremiumDesc">Transparent premium logo with a monogram house mark and HOSTMATE wordmark.</desc>
+  <defs>
+    <linearGradient id="hostmatePremiumGradient" x1="18" y1="16" x2="132" y2="136" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F766E" />
+      <stop offset="1" stop-color="#134E4A" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(18 18)">
+    <path d="M72 10L126 48V105C126 117.15 116.15 127 104 127H40C27.8497 127 18 117.15 18 105V48L72 10Z" fill="url(#hostmatePremiumGradient)"/>
+    <path d="M48 55C48 51.6863 50.6863 49 54 49H64C67.3137 49 70 51.6863 70 55V89H86V55C86 51.6863 88.6863 49 92 49H102C105.314 49 108 51.6863 108 55V101C108 106.523 103.523 111 98 111H58C52.4772 111 48 106.523 48 101V55Z" fill="white" fill-opacity="0.98"/>
+    <path d="M54 89H102" stroke="#CCFBF1" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(186 34)">
+    <text x="0" y="62" fill="#0F172A" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="1.8">HOSTMATE</text>
+  </g>
+</svg>

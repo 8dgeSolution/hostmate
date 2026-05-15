@@ -1,0 +1,23 @@
+<svg width="720" height="180" viewBox="0 0 720 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hostmateRefinedTitle hostmateRefinedDesc">
+  <title id="hostmateRefinedTitle">HostMate refined logo</title>
+  <desc id="hostmateRefinedDesc">Transparent refined HostMate logo with a minimalist monogram house mark and HOSTMATE wordmark.</desc>
+  <defs>
+    <linearGradient id="hostmateRefinedGradient" x1="22" y1="18" x2="138" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#159A8C" />
+      <stop offset="1" stop-color="#0F5C56" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(18 18)">
+    <rect x="10" y="10" width="124" height="124" rx="34" fill="url(#hostmateRefinedGradient)" />
+    <path d="M42 74L72 48L102 74" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M50 70V98C50 103.523 54.4772 108 60 108H84C89.5228 108 94 103.523 94 98V70" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M63 58V98" stroke="#CFF8F1" stroke-width="7" stroke-linecap="round" />
+    <path d="M81 58V98" stroke="#CFF8F1" stroke-width="7" stroke-linecap="round" />
+    <path d="M63 79H81" stroke="#CFF8F1" stroke-width="7" stroke-linecap="round" />
+  </g>
+
+  <g transform="translate(182 36)">
+    <text x="0" y="66" fill="#0F172A" font-family="Aptos, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="60" font-weight="700" letter-spacing="1.8">HOSTMATE</text>
+  </g>
+</svg>

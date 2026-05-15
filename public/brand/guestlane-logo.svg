@@ -1,0 +1,23 @@
+<svg width="720" height="180" viewBox="0 0 720 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="guestlaneTitle guestlaneDesc">
+  <title id="guestlaneTitle">Guestlane logo</title>
+  <desc id="guestlaneDesc">Transparent logo with a rounded path icon and Guestlane wordmark.</desc>
+  <defs>
+    <linearGradient id="guestlaneGradient" x1="26" y1="20" x2="132" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F766E" />
+      <stop offset="1" stop-color="#134E4A" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(20 20)">
+    <path d="M58 16C34.8 16 16 34.8 16 58V82C16 105.2 34.8 124 58 124H84C107.2 124 126 105.2 126 82V58C126 34.8 107.2 16 84 16H58Z" fill="url(#guestlaneGradient)"/>
+    <path d="M49 43.5C49 40.4624 51.4624 38 54.5 38H73.5C76.5376 38 79 40.4624 79 43.5V97.5C79 100.538 76.5376 103 73.5 103H54.5C51.4624 103 49 100.538 49 97.5V43.5Z" fill="white" fill-opacity="0.98"/>
+    <path d="M84 54C84 50.6863 86.6863 48 90 48H98C101.314 48 104 50.6863 104 54V86C104 89.3137 101.314 92 98 92H84V54Z" fill="#CCFBF1"/>
+    <path d="M41 96C57 82.6667 68 76 74 76C80 76 91.3333 82.6667 108 96" stroke="#CCFBF1" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="64.5" cy="70.5" r="3.5" fill="#0F766E"/>
+  </g>
+
+  <g transform="translate(182 44)">
+    <text x="0" y="56" fill="#0F172A" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="60" font-weight="700" letter-spacing="-1.6">Guestlane</text>
+    <text x="2" y="98" fill="#475569" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="22" font-weight="500" letter-spacing="0.2">Guest welcome guides for short-stay hosts</text>
+  </g>
+</svg>

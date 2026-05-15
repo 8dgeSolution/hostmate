@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String      @id @default(cuid())
+  name         String?
+  email        String      @unique
+  passwordHash String
+  companyLogoUrl String?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  properties   Property[]
+}
+
+model Property {
+  id                   String   @id @default(cuid())
+  hostId               String
+  title                String
+  slug                 String   @unique
+  themePreset          String   @default("coastal")
+  heroTitle            String
+  heroSubtitle         String
+  addressLine1         String
+  addressLine2         String?
+  city                 String
+  state                String
+  postcode             String
+  country              String
+  wifiSsid             String
+  wifiPassword         String
+  checkInTime          String
+  checkOutTime         String
+  quietHours           String
+  houseRules           String
+  parkingInfo          String?
+  lockboxInstructions  String
+  lockboxCode          String?
+  lockboxSteps         String?
+  arrivalNotes         String?
+  amenities            String
+  propertyLat          Float
+  propertyLng          Float
+  lockboxLat           Float?
+  lockboxLng           Float?
+  parkingLat           Float?
+  parkingLng           Float?
+  parkingSteps         String?
+  published            Boolean  @default(true)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  host                 User     @relation(fields: [hostId], references: [id], onDelete: Cascade)
+}
