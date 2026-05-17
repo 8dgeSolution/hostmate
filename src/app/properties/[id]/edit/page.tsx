@@ -29,7 +29,7 @@ export default async function EditPropertyPage({ params }: EditPropertyPageProps
 
   return (
     <main>
-      <PropertyForm property={property} />
+      <PropertyForm property={{ ...property, themePreset: property.themePreset as import("@/lib/theme").GuestThemePreset }} />
     </main>
   );
 }

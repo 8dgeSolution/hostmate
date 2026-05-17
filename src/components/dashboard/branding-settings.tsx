@@ -1,4 +1,6 @@
+
 "use client";
+import Image from "next/image";
 
 import { useRef, useState, useTransition } from "react";
 import { Building2, ImageUp, LoaderCircle, Trash2 } from "lucide-react";
@@ -113,7 +115,7 @@ export function BrandingSettings({ currentLogoUrl }: BrandingSettingsProps) {
 
       <div className="rounded-[1.5rem] border border-[var(--line)] bg-white/80 p-5">
         {logoUrl ? (
-          <img src={logoUrl} alt="Company logo preview" className="h-16 w-auto max-w-[220px] object-contain" />
+          <Image src={logoUrl} alt="Company logo preview" className="h-16 w-auto max-w-[220px] object-contain" width={220} height={64} />
         ) : (
           <p className="text-sm text-slate-500">No logo uploaded yet.</p>
         )}

@@ -50,8 +50,8 @@ export async function PATCH(request: Request) {
 
         if (publicId) {
           // Best-effort delete; don't block the request if Cloudinary deletion fails
-          await new Promise<void>((resolve, reject) => {
-            cloudinary.uploader.destroy(publicId, { invalidate: true }, (err, res) => {
+          await new Promise<void>((resolve) => {
+            cloudinary.uploader.destroy(publicId, { invalidate: true }, (err) => {
               if (err) {
                 // log to console for now
                 console.error("Cloudinary destroy error:", err);

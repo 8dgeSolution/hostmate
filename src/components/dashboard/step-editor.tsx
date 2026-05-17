@@ -1,4 +1,6 @@
+
 "use client";
+import Image from "next/image";
 
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
@@ -79,9 +81,9 @@ export function StepEditor({ name, label, description, initialSteps = [], upload
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
       });
-    } catch (err) {
+    } catch {
       // swallow errors; best-effort
-      // console.debug("Failed to delete image:", err);
+      // console.debug("Failed to delete image");
     }
   }
 
@@ -209,18 +211,6 @@ export function StepEditor({ name, label, description, initialSteps = [], upload
     }
   }
 
-  async function removeStep(stepId: string) {
-    const toRemove = steps.find((s) => s.id === stepId);
-    const prevUrl = toRemove?.imageUrl ?? null;
-
-    // remove from state
-    updateSteps(steps.filter((item) => item.id !== stepId));
-
-    // delete remote asset best-effort
-    if (prevUrl) {
-      void deleteImageUrl(prevUrl);
-    }
-  }
 
   return (
     <div className="space-y-4 rounded-[1.5rem] border border-[var(--line)] bg-white/70 p-4">
@@ -387,7 +377,7 @@ export function StepEditor({ name, label, description, initialSteps = [], upload
                         </div>
                         <div className="rounded-[1.5rem] border border-[var(--line)] bg-white/80 p-3 sm:p-4">
                           {stepDraft.imageUrl ? (
-                            <img src={stepDraft.imageUrl} alt={stepDraft.title || "Step preview"} className="h-full max-h-[320px] w-full rounded-2xl object-cover" />
+                            <Image src={stepDraft.imageUrl} alt={stepDraft.title || "Step preview"} className="h-full max-h-[320px] w-full rounded-2xl object-cover" width={480} height={320} />
                           ) : (
                             <div className="flex h-full min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-[var(--line)] bg-slate-50 text-sm text-slate-500">
                               Image preview appears here.
@@ -420,18 +410,16 @@ export function StepEditor({ name, label, description, initialSteps = [], upload
                   <div className="flex flex-col-reverse gap-3 border-t border-[var(--line)] px-4 py-4 sm:flex-row sm:justify-end sm:px-6 sm:py-5">
                     <Button type="button" variant="secondary" onClick={closeStepModal}>
                       Cancel
-                    <button
-                      type="button"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-rose-200 text-rose-600 transition hover:bg-rose-50 hover:text-rose-700"
-                      onClick={() => void removeStep(step.id)}
-                      aria-label={`Remove step ${index + 1}`}
-                      title="Remove"
-                    >
-                      <Trash2 className="h-4 w-4" />
-                    </button>
+                    </Button>
+                    <Button type="button" onClick={saveStepDraft}>
+                      Save
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>,
             portalRoot,
-          )
-        : null}
+          ) : null}
 
       <input type="hidden" name={name} value={serialized} readOnly />
     </div>

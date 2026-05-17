@@ -79,7 +79,6 @@ async function main() {
     update: demoPropertyData,
     create: {
       hostId: host.id,
-      title: "Harbour View Suite",
       slug: "harbour-view-suite",
       ...demoPropertyData,
     },

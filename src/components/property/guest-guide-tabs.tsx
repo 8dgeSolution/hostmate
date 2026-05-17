@@ -1,4 +1,6 @@
+
 "use client";
+import Image from "next/image";
 
 import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Info, KeyRound, MapPinned, ParkingCircle, ShieldCheck, Wifi } from "lucide-react";
@@ -402,10 +404,12 @@ export function GuestGuideTabs({ guide, mode = "public" }: GuestGuideTabsProps) 
         <div className={`rounded-[1.75rem] text-white shadow-[0_24px_80px_rgba(15,118,110,0.22)] ${isPublic ? "p-4 sm:p-5" : "p-4 sm:rounded-[2rem] sm:p-6"}`} style={{ backgroundImage: "linear-gradient(135deg,var(--guide-hero-from),var(--guide-hero-to))" }}>
           <div className={`flex items-start gap-4 ${isPublic ? "sm:gap-5" : "sm:gap-6"}`}>
             <div className="shrink-0 pt-1">
-              <img
+              <Image
                 src={heroLogoUrl}
                 alt={heroLogoAlt}
                 className={`${isPublic ? "h-12 max-w-[120px] sm:h-16 sm:max-w-[160px]" : "h-14 max-w-[140px] sm:h-20 sm:max-w-[200px]"} w-auto object-contain`}
+                width={isPublic ? 160 : 200}
+                height={isPublic ? 64 : 80}
               />
             </div>
             <div className="min-w-0">

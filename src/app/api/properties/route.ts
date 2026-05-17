@@ -42,6 +42,7 @@ export async function POST(request: Request) {
       addressLine2: parsed.data.addressLine2 || null,
       parkingInfo: parsed.data.parkingInfo || null,
       lockboxCode: parsed.data.lockboxCode || null,
+      lockboxInstructions: parsed.data.lockboxInstructions || "",
       lockboxSteps: parsed.data.lockboxSteps,
       arrivalNotes: parsed.data.arrivalNotes || null,
       lockboxLat: normalizeOptionalNumbers(parsed.data.lockboxLat),

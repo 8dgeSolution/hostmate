@@ -1,9 +1,11 @@
+
+import "./globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { auth, signOut } from "@/lib/auth";
-import "./globals.css";
 
 export const metadata: Metadata = {
   title: "HostMate",
@@ -21,7 +23,7 @@ export default async function RootLayout({
       <div className="hidden items-center justify-between gap-6 md:flex">
         <div>
           <Link href="/" className="inline-flex items-center text-2xl font-semibold tracking-tight text-[var(--accent-strong)]">
-            <img src="/brand/hostmate-logo.svg" alt="HostMate" className="h-10 w-auto" />
+            <Image src="/brand/hostmate-logo.svg" alt="HostMate" className="h-10 w-auto" width={120} height={40} />
           </Link>
           <p className="mt-1 text-sm text-slate-600">Professional digital welcome books for short-stay properties.</p>
         </div>
@@ -62,7 +64,7 @@ export default async function RootLayout({
         <summary className="flex list-none items-center justify-between gap-4 rounded-[1.4rem] px-1 py-1">
           <div>
             <Link href="/" className="inline-flex items-center text-xl font-semibold tracking-tight text-[var(--accent-strong)]">
-              <img src="/brand/hostmate-logo.svg" alt="HostMate" className="h-8 w-auto" />
+              <Image src="/brand/hostmate-logo.svg" alt="HostMate" className="h-8 w-auto" width={96} height={32} />
             </Link>
             <p className="mt-1 text-xs text-slate-600">Digital welcome books for short stays.</p>
           </div>

@@ -1,4 +1,6 @@
+
 "use client";
+import Image from "next/image";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
@@ -198,7 +200,7 @@ export function PropertyMap({ center, markers }: PropertyMapProps) {
                       onClick={() => setFullscreenImage(popupImage)}
                       aria-label={`Open ${popupImage.alt} image fullscreen`}
                     >
-                      <img src={popupImage.src} alt={popupImage.alt} className="h-28 w-full rounded-xl object-cover transition hover:scale-[1.02]" />
+                      <Image src={popupImage.src} alt={popupImage.alt} className="h-28 w-full rounded-xl object-cover transition hover:scale-[1.02]" width={320} height={112} />
                     </button>
                   ) : null}
                 </div>
@@ -215,10 +217,12 @@ export function PropertyMap({ center, markers }: PropertyMapProps) {
           onClick={() => setFullscreenImage(null)}
           aria-label="Close fullscreen image"
         >
-          <img
+          <Image
             src={fullscreenImage.src}
             alt={fullscreenImage.alt}
             className="max-h-full max-w-full rounded-2xl object-contain shadow-2xl"
+            width={800}
+            height={600}
           />
         </button>
       ) : null}

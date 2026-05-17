@@ -19,18 +19,19 @@
     "clsx": "^2.1.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.511.0",
-    "next": "15.3.2",
+    "next": "^15.5.18",
     "next-auth": "^5.0.0-beta.28",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.57.0",
     "react-leaflet": "^5.0.0",
     "slugify": "^1.6.6",
-    "zod": "^3.24.4"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
     "@tailwindcss/postcss": "^4.1.5",
+    "@types/bcryptjs": "^2.4.6",
     "@types/leaflet": "^1.9.17",
     "@types/node": "^22.15.17",
     "@types/react": "^19.1.2",
