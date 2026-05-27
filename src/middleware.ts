@@ -11,6 +11,7 @@ export function middleware(request: NextRequest) {
     console.log("middleware:", { pathname, cookieHeader: request.headers.get("cookie") });
   } catch (e) {
     // ignore logging errors in edge runtime
+    console.error(e)
   }
 
   // Only enforce auth for the dashboard and properties routes
