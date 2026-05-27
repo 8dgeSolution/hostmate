@@ -6,7 +6,6 @@ import { db } from "@/lib/db";
 type EditPropertyPageProps = {
   params: Promise<{ id: string }>;
 };
-
 export default async function EditPropertyPage({ params }: EditPropertyPageProps) {
   const session = await auth();
 
