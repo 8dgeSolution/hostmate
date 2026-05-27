@@ -13,6 +13,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   session: {
     strategy: "jwt",
   },
+  // Ensure the session cookie is available site-wide so middleware can read it
+  // (Auth.js may default the cookie path to the auth base path which prevents
+  // middleware from seeing the cookie for top-level routes).
+  cookies: {
+    sessionToken: {
+      name: process.env.NODE_ENV === "production" ? "__Secure-next-auth.session-token" : "next-auth.session-token",
+      options: {
+        path: "/",
+      },
+    },
+  },
   pages: {
     signIn: "/sign-in",
   },
