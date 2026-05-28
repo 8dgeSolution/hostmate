@@ -51,7 +51,7 @@ export function GuestPreview({ draft }: GuestPreviewProps) {
         </div>
       </div>
 
-      <Card>
+      <Card className="!p-0">
         <GuestGuideTabs guide={draft} mode="preview" />
       </Card>
     </div>

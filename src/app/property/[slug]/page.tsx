@@ -30,7 +30,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
   const parkingSteps = parseGuideSteps(property.parkingSteps);
 
   return (
-    <main className="h-screen overflow-hidden px-3 py-3 sm:px-4 sm:py-4 lg:px-5 lg:py-5">
+    <main style={{ height: 'calc(var(--vh, 1vh) * 100)' }} className="overflow-hidden">
       <GuestGuideTabs
         guide={{
           title: property.title,

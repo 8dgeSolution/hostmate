@@ -238,29 +238,25 @@ function MapTab({
 }) {
   if (compact) {
     return (
-      <Card className="h-full min-h-0 overflow-hidden p-0">
-        <div className="h-full min-h-0 bg-slate-100">
-          <div className="relative h-full min-h-[18rem] sm:min-h-[22rem]">
-            <PropertyMapClient center={center} markers={markers} />
-            <StepPanel title={title} code={code} steps={steps} stepIndex={stepIndex} onPrev={onPrev} onNext={onNext} overlay />
-          </div>
+      <Card className="h-full min-h-0 overflow-hidden !p-0 bg-slate-100">
+        <div className="relative h-full min-h-[18rem] sm:min-h-[22rem]">
+          <PropertyMapClient center={center} markers={markers} />
+          <StepPanel title={title} code={code} steps={steps} stepIndex={stepIndex} onPrev={onPrev} onNext={onNext} overlay />
         </div>
       </Card>
     );
   }
 
   return (
-    <Card className="overflow-hidden p-0">
-      <div className="bg-slate-100">
-        <div className="relative h-[320px] sm:h-[620px] lg:h-[680px]">
-          <PropertyMapClient center={center} markers={markers} />
-          <div className="absolute inset-x-5 bottom-5 hidden sm:block">
-            <StepPanel title={title} code={code} steps={steps} stepIndex={stepIndex} onPrev={onPrev} onNext={onNext} overlay />
-          </div>
+    <Card className="overflow-hidden !p-0 bg-slate-100">
+      <div className="relative h-[320px] sm:h-[620px] lg:h-[680px]">
+        <PropertyMapClient center={center} markers={markers} />
+        <div className="absolute inset-x-5 bottom-5 hidden sm:block">
+          <StepPanel title={title} code={code} steps={steps} stepIndex={stepIndex} onPrev={onPrev} onNext={onNext} overlay />
         </div>
-        <div className="p-3 sm:hidden">
-          <StepPanel title={title} code={code} steps={steps} stepIndex={stepIndex} onPrev={onPrev} onNext={onNext} />
-        </div>
+      </div>
+      <div className="p-3 sm:hidden">
+        <StepPanel title={title} code={code} steps={steps} stepIndex={stepIndex} onPrev={onPrev} onNext={onNext} />
       </div>
     </Card>
   );
