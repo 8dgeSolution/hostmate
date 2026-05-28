@@ -19,7 +19,7 @@ export function AppShell({ header, children }: AppShellProps) {
       try {
         document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
       } catch (e) {
-        // ignore in non-browser environments
+        console.error(e)
       }
     }
 
