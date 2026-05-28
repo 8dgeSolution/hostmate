@@ -93,7 +93,7 @@ export function BrandingSettings({ currentLogoUrl }: BrandingSettingsProps) {
           <input
             ref={fileInputRef}
             type="file"
-            accept="image/png,image/jpeg,image/webp,image/gif"
+            accept="image/png,image/jpeg,image/webp,image/gif,image/heic,image/heif"
             className="hidden"
             onChange={(event) => {
               handleFileChange(event.target.files?.[0] ?? null);

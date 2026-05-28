@@ -364,7 +364,7 @@ export function StepEditor({ name, label, description, initialSteps = [], upload
                               {uploadingStepId === stepDraft.id ? "Uploading..." : "Upload image"}
                               <input
                                 type="file"
-                                accept="image/png,image/jpeg,image/webp,image/gif"
+                                accept="image/*"
                                 className="hidden"
                                 onChange={(event) => {
                                   void uploadStepImage(stepDraft.id, event.target.files?.[0] ?? null);
