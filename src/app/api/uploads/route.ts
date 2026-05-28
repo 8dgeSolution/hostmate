@@ -8,7 +8,10 @@ import { auth } from "@/lib/auth";
 export const runtime = "nodejs";
 
 const DEFAULT_MAX_FILE_SIZE = 5 * 1024 * 1024;
-const allowedTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
+// Include HEIC/HEIF which are common on iPhone cameras and may be uploaded
+// from iCloud or iOS devices. Some browsers may also omit the `file.type`,
+// so we infer from filename when missing below.
+const allowedTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/gif", "image/heic", "image/heif"]);
 
 function sanitizeSegment(value: string) {
   return value
@@ -67,7 +70,9 @@ async function uploadToCloudinary(file: File, folderSegments: string[]) {
       {
         folder: `${config.folder}/${folderSegments.join("/")}`,
         resource_type: "image",
-        allowed_formats: ["jpg", "jpeg", "png", "webp", "gif"],
+        // Allow HEIC/HEIF as well — Cloudinary can accept and convert these
+        // formats. Keep common web formats too.
+        allowed_formats: ["jpg", "jpeg", "png", "webp", "gif", "heic", "heif"],
       },
       (error, result) => {
         if (error || !result?.secure_url) {
@@ -116,7 +121,25 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "No file uploaded." }, { status: 400 });
   }
 
-  if (!allowedTypes.has(file.type)) {
+  // Some browsers (and iOS/iPhone) may upload HEIC/HEIF images or omit the
+  // `file.type`. Try to infer the MIME type from the filename if missing.
+  let mimeType = file.type;
+  if (!mimeType) {
+    const ext = path.extname(file.name || "").toLowerCase();
+    if (ext === ".heic" || ext === ".heif") {
+      mimeType = "image/heic";
+    } else if (ext === ".jpg" || ext === ".jpeg") {
+      mimeType = "image/jpeg";
+    } else if (ext === ".png") {
+      mimeType = "image/png";
+    } else if (ext === ".webp") {
+      mimeType = "image/webp";
+    } else if (ext === ".gif") {
+      mimeType = "image/gif";
+    }
+  }
+
+  if (!mimeType || !allowedTypes.has(mimeType)) {
     return NextResponse.json({ error: "Unsupported image type." }, { status: 400 });
   }
 
